@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="50%" stop-color="#1e1b4b" />
+      <stop offset="100%" stop-color="#090d16" />
+    </linearGradient>
+
+    <!-- Glowing Accent Gradients -->
+    <linearGradient id="cyanPurple" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#06b6d4" />
+      <stop offset="100%" stop-color="#8b5cf6" />
+    </linearGradient>
+
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#6366f1" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#6366f1" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Filters -->
+    <filter id="dropGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Base Background -->
+  <rect width="1200" height="400" fill="url(#bgGradient)" rx="16" />
+
+  <!-- Dynamic Ambient Glow behind elements -->
+  <circle cx="600" cy="200" r="300" fill="url(#glow)" />
+  <circle cx="150" cy="100" r="180" fill="#06b6d4" opacity="0.15">
+    <animate attributeName="r" values="150;210;150" dur="8s" repeatCount="indefinite" />
+  </circle>
+  <circle cx="1050" cy="300" r="200" fill="#8b5cf6" opacity="0.15">
+    <animate attributeName="r" values="180;240;180" dur="10s" repeatCount="indefinite" />
+  </circle>
+
+  <!-- Network Connectivity Dynamic Nodes & Pulse Lines (Background Layer) -->
+  <g opacity="0.3">
+    <!-- Connecting animated lines -->
+    <line x1="100" y1="320" x2="300" y2="280" stroke="#06b6d4" stroke-width="2" stroke-dasharray="6,6">
+      <animate attributeName="stroke-dashoffset" values="0;24" dur="3s" repeatCount="indefinite" />
+    </line>
+    <line x1="300" y1="280" x2="500" y2="340" stroke="#8b5cf6" stroke-width="2" stroke-dasharray="6,6">
+      <animate attributeName="stroke-dashoffset" values="24;0" dur="4s" repeatCount="indefinite" />
+    </line>
+    <line x1="700" y1="340" x2="900" y2="280" stroke="#ec4899" stroke-width="2" stroke-dasharray="6,6">
+      <animate attributeName="stroke-dashoffset" values="0;24" dur="3.5s" repeatCount="indefinite" />
+    </line>
+    <line x1="900" y1="280" x2="1100" y2="320" stroke="#06b6d4" stroke-width="2" stroke-dasharray="6,6">
+      <animate attributeName="stroke-dashoffset" values="24;0" dur="2.5s" repeatCount="indefinite" />
+    </line>
+
+    <!-- Floating Service Mesh Nodes -->
+    <circle cx="100" cy="320" r="8" fill="#06b6d4">
+      <animate attributeName="cy" values="315;325;315" dur="4s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="300" cy="280" r="10" fill="#8b5cf6">
+      <animate attributeName="cy" values="275;285;275" dur="5s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="900" cy="280" r="10" fill="#ec4899">
+      <animate attributeName="cy" values="283;273;283" dur="4.5s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="1100" cy="320" r="8" fill="#3b82f6">
+      <animate attributeName="cy" values="323;313;323" dur="3.8s" repeatCount="indefinite" />
+    </circle>
+  </g>
+
+  <!-- Foreground Main Title & Subtitle (Clean & Visible) -->
+  <g text-anchor="middle" filter="url(#dropGlow)">
+    <!-- Top Pill Badge -->
+    <rect x="440" y="45" width="320" height="32" rx="16" fill="url(#cyanPurple)" opacity="0.9" />
+    <text x="600" y="66" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" letter-spacing="1.5">SERVICE-TO-SERVICE CONNECTIVITY</text>
+
+    <!-- Main Headline -->
+    <text x="600" y="145" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="44" font-weight="800" letter-spacing="-0.5">
+      Awesome Application Networking
+    </text>
+
+    <!-- Subtitle -->
+    <text x="600" y="195" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="20" font-weight="400">
+      Curated Service Mesh, eBPF Data Planes, Zero-Trust mTLS &amp; Multi-Cluster Frameworks
+    </text>
+  </g>
+
+  <!-- Interactive/Dynamic Feature Chips at Bottom Foreground -->
+  <g text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="600">
+    <!-- Chip 1 -->
+    <g transform="translate(240, 240)">
+      <rect x="0" y="0" width="160" height="38" rx="19" fill="#1e293b" stroke="#334155" stroke-width="1.5" />
+      <text x="80" y="24" fill="#38bdf8">🐝 eBPF &amp; Sidecarless</text>
+    </g>
+
+    <!-- Chip 2 -->
+    <g transform="translate(420, 240)">
+      <rect x="0" y="0" width="160" height="38" rx="19" fill="#1e293b" stroke="#334155" stroke-width="1.5" />
+      <text x="80" y="24" fill="#a78bfa">🔒 Zero-Trust mTLS</text>
+    </g>
+
+    <!-- Chip 3 -->
+    <g transform="translate(600, 240)">
+      <rect x="0" y="0" width="160" height="38" rx="19" fill="#1e293b" stroke="#334155" stroke-width="1.5" />
+      <text x="80" y="24" fill="#f472b6">🌐 Multi-Cluster Mesh</text>
+    </g>
+
+    <!-- Chip 4 -->
+    <g transform="translate(780, 240)">
+      <rect x="0" y="0" width="160" height="38" rx="19" fill="#1e293b" stroke="#334155" stroke-width="1.5" />
+      <text x="80" y="24" fill="#fb923c">⚡ Low Latency Data Plane</text>
+    </g>
+  </g>
+</svg>
