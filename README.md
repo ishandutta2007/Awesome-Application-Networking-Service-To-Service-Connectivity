@@ -67,7 +67,7 @@ The service mesh and application networking market has consolidated around a han
 
 ## 🔓 Open-Source GitHub Projects 🛠️ 🌐
 
-*Sorted by GitHub Stars Count (Descending)* 🌟
+*Sorted by GitHub_Stars_Count (Descending)* 🌟
 
 - **[Traefik Proxy](https://github.com/traefik/traefik)** [![Stars](https://img.shields.io/github/stars/traefik/traefik?style=social&color=white)](https://github.com/traefik/traefik/stargazers)  
   **Cloud-native application proxy**, MIT licensed. ~51k+ stars. Supports TCP/UDP/HTTP routing with automatic service discovery. Foundation for Traefik Hub commercial tiers. 🚦
